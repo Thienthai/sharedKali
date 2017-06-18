@@ -1,0 +1,141 @@
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver/lib
+	/usr/bin/gcc
+	-c
+	-g
+	-o
+	saccept.o
+	saccept.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver/lib
+	/usr/bin/gcc
+	-c
+	-g
+	-o
+	sconnect.o
+	sconnect.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver/lib
+	/usr/bin/gcc
+	-c
+	-g
+	-o
+	slisten.o
+	slisten.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver/lib
+	/usr/bin/gcc
+	-c
+	-g
+	-o
+	sportnum.o
+	sportnum.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver/lib
+	/usr/bin/gcc
+	-c
+	-g
+	-o
+	sprim.o
+	sprim.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver/lib
+	/usr/bin/gcc
+	-c
+	-g
+	-o
+	smessages.o
+	smessages.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	client.o
+	-c
+	client.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	common.o
+	-c
+	common.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	client
+	client.o
+	common.o
+	-L./lib/
+	-lsock
+	-lpthread
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	server.o
+	-c
+	server.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	server
+	server.o
+	common.o
+	-L./lib/
+	-lsock
+	-lpthread
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	example_thread.o
+	-c
+	example_thread.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	example_thread
+	example_thread.o
+	-lpthread
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	threadpool_test.o
+	-c
+	threadpool_test.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	threadpool.o
+	-c
+	threadpool.c
+
+called: /usr/bin/gcc
+	/Users/thienthaichotchai/Desktop/os hw_2/mtserver
+	/usr/bin/gcc
+	-o
+	threadpool_test
+	threadpool_test.o
+	threadpool.o
+	-lpthread
+

@@ -1,0 +1,24 @@
+cd lib && make
+gcc -c -g -o saccept.o saccept.c
+gcc -c -g -o sconnect.o sconnect.c
+gcc -c -g -o slisten.o slisten.c
+gcc -c -g -o sportnum.o sportnum.c
+gcc -c -g -o sprim.o sprim.c
+gcc -c -g -o smessages.o smessages.c
+ar ru libsock.a saccept.o sconnect.o slisten.o sportnum.o sprim.o smessages.o
+ar: creating archive libsock.a
+ranlib libsock.a
+gcc -o client.o -c client.c
+gcc -o common.o -c common.c
+gcc -o client client.o common.o -L./lib/ -lsock -lpthread
+gcc -o server.o -c server.c
+gcc -o server server.o common.o -L./lib/ -lsock -lpthread
+gcc -o example_thread.o -c example_thread.c
+gcc -o example_thread example_thread.o -lpthread
+gcc -o threadpool_test.o -c threadpool_test.c
+gcc -o threadpool.o -c threadpool.c
+gcc -o threadpool_test threadpool_test.o threadpool.o -lpthread
+strip client
+strip server
+strip example_thread
+strip threadpool_test
