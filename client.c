@@ -24,21 +24,19 @@
 
 int main(int argc, char **argv) {
   int  socket_talk, i;
-  //char *ch = argv[3];
   char request[REQUEST_SIZE];
   char response[RESPONSE_SIZE];
   //strcpy(request,ch);
-  if (argc != 4) {
+  if (argc != 3) {
     fprintf(stderr,
 	    "(CLIENT): Invoke as  'client machine.name.address socknum'\n");
     exit(1);
   }
-  // initialize request to some silly data
-//  for (i=0; i<REQUEST_SIZE; i++) {
-//    request[i] = (char) i%255;
-//  }
-  //printf("start the client now %s\n",test);
-  // spin forever, opening connections, and pushing requests
+//   initialize request to some silly data
+  for (i=0; i<REQUEST_SIZE; i++) {
+    request[i] = (char) i%255;
+  }
+//   spin forever, opening connections, and pushing requests
   while(1) {
     int result;
 

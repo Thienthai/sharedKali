@@ -138,7 +138,6 @@ threadpool create_threadpool(int num_threads_in_pool) {
 void dispatch(threadpool from_me, dispatch_fn dispatch_to_here,
 	      void *arg) {
   _threadpool *pool = (_threadpool *) from_me;
-  printf("come here");
   // add your code here to dispatch a thread
   // make the sequence process of thread
   record_t * seq;

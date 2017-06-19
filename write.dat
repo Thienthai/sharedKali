@@ -1,0 +1,2 @@
+plot [0:80] 'numloop1.dat' w l , 'numloop100.dat' w l , 'numloop1000.dat' w l , 'numloop10000.dat' w l, 'numloop100000.dat' w l lc rgb 'red', 'numloop500000.dat' w l
+

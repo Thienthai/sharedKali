@@ -11,8 +11,6 @@
         <in>sportnum.c</in>
         <in>sprim.c</in>
       </df>
-      <df name="writeup">
-      </df>
       <in>client.c</in>
       <in>common.c</in>
       <in>common.h</in>

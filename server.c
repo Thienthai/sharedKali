@@ -29,7 +29,7 @@ char *read_request(int fd);
 char *process_request(char *request, int *response_length);
 void  send_response(int fd, char *response, int response_length);
 void server_work(void *arg);
-void throughput(int second);
+void throughput(struct timeval start,struct timeval end);
 
 /**
 * This program should be invoked as "./server <socketnumber>", for
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
     int  dummy, len;
     int count = 0;
     struct timeval start, end;
-
+    int repeat = 0;
     if (argc != 2)
     {
         fprintf(stderr, "(SERVER): Invoke as  './server socknum'\n");
@@ -78,25 +78,33 @@ int main(int argc, char **argv)
     *
     *  5) Close the data socket associated with the connection
     */
-    printf("worknow\n");
     threadpool tp;
-    tp = create_threadpool(10);  // create the threadpool with 10 thread
-    //gettimeofday(&start, NULL);
+    tp = create_threadpool(32);  // create the threadpool with 10 thread
+    gettimeofday(&start,NULL);
     while(1) {
         socket_talk = saccept(socket_listen);  // step 1
-        printf("continue");
         if (socket_talk < 0) {
             fprintf(stderr, "An error occured in the server; a connection\n");
             fprintf(stderr, "failed because of ");
             perror("");
             exit(1);
         }
+        if(count == 100){
+            gettimeofday(&end,NULL);
+            throughput(start,end);
+            count = 0;
+            gettimeofday(&start,NULL);
+        }
         dispatch(tp,server_work,(void *) &socket_talk);
+        count++;
     }
 }
 
-void throughput(int second){
-    printf("%d millisecond\n",second);
+void throughput(struct timeval start,struct timeval end){
+    //printf("start = %d end = %d\n",start,end);
+    double sec = (double) ((end.tv_sec * 1000000 + end.tv_usec)
+		  - (start.tv_sec * 1000000 + start.tv_usec))/1000000;
+    printf("%lf\n", 100/sec);
 }
 
 //server work will handle all the thread and the request
@@ -116,7 +124,6 @@ void server_work(void *arg){
         }
     }
     close(socket_talk);  // step 5
-    printf("close\n");
     // clean up allocated memory, if any
     if (request != NULL)
     free(request);

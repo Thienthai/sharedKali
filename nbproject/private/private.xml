@@ -10,12 +10,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/thienthaichotchai/Desktop/os%20hw_2/mtserver/Makefile</file>
-            <file>file:/Users/thienthaichotchai/Desktop/os%20hw_2/mtserver/server.c</file>
-            <file>file:/Users/thienthaichotchai/Desktop/os%20hw_2/mtserver/threadpool.h</file>
-            <file>file:/Users/thienthaichotchai/Desktop/os%20hw_2/mtserver/client.c</file>
-            <file>file:/Users/thienthaichotchai/Desktop/os%20hw_2/mtserver/threadpool_test.c</file>
-            <file>file:/Users/thienthaichotchai/Desktop/os%20hw_2/mtserver/threadpool.c</file>
+            <file>file:/home/thienthai/Desktop/sharedKali/threadpool.c</file>
+            <file>file:/home/thienthai/Desktop/sharedKali/server.c</file>
+            <file>file:/home/thienthai/Desktop/sharedKali/client.c</file>
         </group>
     </open-files>
 </project-private>
