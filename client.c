@@ -24,9 +24,11 @@
 
 int main(int argc, char **argv) {
   int  socket_talk, i;
+  //char *ch = argv[3];
   char request[REQUEST_SIZE];
   char response[RESPONSE_SIZE];
-  if (argc != 3) {
+  //strcpy(request,ch);
+  if (argc != 4) {
     fprintf(stderr,
 	    "(CLIENT): Invoke as  'client machine.name.address socknum'\n");
     exit(1);

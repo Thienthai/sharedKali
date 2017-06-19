@@ -18,6 +18,12 @@ socketlib:
 example_thread: example_thread.o
 	$(CC) -o example_thread example_thread.o -lpthread
 
+threadpool.o: threadpool.c
+	$(CC) -o threadpool.o -c threadpool.c
+
+threadpool_test.o: threadpool_test.c threadpool.h
+	$(CC) -o threadpool_test.o -c threadpool_test.c
+
 client: client.o common.o
 	$(CC) -o client client.o common.o $(LIBS) -lsock -lpthread
 
@@ -38,12 +44,6 @@ common.o: common.c
 
 example_thread.o: example_thread.c
 	$(CC) -o example_thread.o -c example_thread.c
-
-threadpool.o: threadpool.c
-	$(CC) -o threadpool.o -c threadpool.c
-
-threadpool_test.o: threadpool_test.c threadpool.h
-	$(CC) -o threadpool_test.o -c threadpool_test.c
 
 clean:
 	/bin/rm -f mtserver.zip
